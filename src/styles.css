@@ -491,13 +491,13 @@ footer {
     bottom: auto;
     width: min(300px, 50vw);
     transform: translateY(-43%) translateX(35px);
-    padding: 25px;
+    padding: 20px;
   }
   .panel.show {
     transform: translateY(-43%) translateX(0);
   }
   .panel h2 {
-    font-size: 38px;
+    font-size: 32px;
     margin: 15px 0;
   }
   .panel p {
@@ -505,6 +505,17 @@ footer {
   }
   .panel img {
     max-height: 300px !important;
+  }
+  .panel-btn {
+    padding: 12px 12px;
+    font-size: 10px;
+  }
+  .panel-row {
+    flex-wrap: wrap;
+  }
+  .panel-row .panel-btn {
+    flex: 1;
+    min-width: 80px;
   }
   .hotspot {
     transform: translate(-50%, -50%) scale(0.9);
