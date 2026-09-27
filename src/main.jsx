@@ -301,7 +301,7 @@ function App() {
   const copyAddress = () => {
     navigator.clipboard.writeText(TOKEN_ADDRESS);
     setCopied(true);
-    setStatus('Contract address copied!');
+    setStatus('Full contract address copied!');
     setTimeout(() => setCopied(false), 2000);
   };
 
@@ -322,7 +322,7 @@ function App() {
         </>}
         {focus === 'bag' && <>
           <div className="panel-kicker">· BURN</div><h2>CONTRACT<br /><em>ADDRESS</em></h2>
-          <p onClick={copyAddress} style={{ cursor: 'pointer', color: '#e7b768', textDecoration: 'underline', textDecorationColor: '#e7b768' }}>{copied ? 'Copied!' : TOKEN_ADDRESS}</p>
+          <p onClick={copyAddress} style={{ cursor: 'pointer', color: '#e7b768', textDecoration: 'underline', textDecorationColor: '#e7b768', fontSize: '12px' }}>{copied ? 'Copied!' : '0xad4db...2f8bfa'}</p>
           <button className="panel-btn" onClick={() => window.__burnFocus?.('loot')}>HOW TO BUY →</button>
         </>}
         {focus === 'fire' && <>
@@ -333,8 +333,8 @@ function App() {
         {focus === 'loot' && <>
           <div className="panel-kicker">· HOW TO BUY</div><h2>BURN<em></em></h2>
           <p><strong>1</strong><br /><br />Fund a Cronos wallet</p>
-          <p><strong>2</strong><br />go to cronos launch or cro trade<br />Connect your wallet</p>
-          <p><strong>3</strong><br />Swap CRO → BURN<br />double check the contract 0xad4db17e25fc62c43470c084cae5f239aa2f8bfa</p>
+          <p><strong>2</strong><br />go to cronos launch<br />Connect your wallet</p>
+          <p><strong>3</strong><br />Swap CRO → BURN<br />double check the contract <span onClick={copyAddress} style={{ cursor: 'pointer', color: '#e7b768', textDecoration: 'underline', textDecorationColor: '#e7b768', fontSize: '12px' }}>{copied ? 'Copied!' : '0xad4db...2f8bfa'}</span></p>
           <div className="panel-row"><button className="panel-btn" onClick={() => window.__burnFocus?.('fire')}>THE LORE →</button><a className="panel-btn hot" href={BUY_URL} target="_blank" rel="noreferrer">BUY ON CRONOS ↗</a></div>
         </>}
       </aside>

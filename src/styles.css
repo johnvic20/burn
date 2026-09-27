@@ -485,20 +485,26 @@ footer {
     font-size: 8px;
   }
   .panel {
-    left: 6vw;
-    right: 6vw;
-    top: auto;
-    bottom: 78px;
-    width: auto;
-    transform: translateY(20px);
-    padding: 18px;
+    right: 4vw;
+    left: auto;
+    top: 50%;
+    bottom: auto;
+    width: min(300px, 50vw);
+    transform: translateY(-43%) translateX(35px);
+    padding: 25px;
   }
   .panel.show {
-    transform: translateY(0);
+    transform: translateY(-43%) translateX(0);
   }
   .panel h2 {
     font-size: 38px;
-    margin: 10px 0;
+    margin: 15px 0;
+  }
+  .panel p {
+    font-size: 13px;
+  }
+  .panel img {
+    max-height: 300px !important;
   }
   .hotspot {
     transform: translate(-50%, -50%) scale(0.9);
