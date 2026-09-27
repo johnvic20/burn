@@ -328,7 +328,7 @@ function App() {
         {focus === 'fire' && <>
           <div className="panel-kicker">· THE LORE</div>
           <img src={tweet2} alt="Lore" style={{ maxWidth: '100%', maxHeight: '450px', objectFit: 'contain' }} />
-          <div className="panel-row"><button className="panel-btn" onClick={() => window.__burnHome?.()}>HOME</button><button className="panel-btn hot" onClick={burn}>BURN IT</button><a className="panel-btn" href="https://x.com/Fwiz/status/2100663121702744509" target="_blank" rel="noreferrer">X ↗</a></div>
+          <div className="panel-row"><button className="panel-btn" onClick={() => window.__burnHome?.()}>HOME</button><button className="panel-btn hot" onClick={() => { burn(); setTimeout(() => window.open('https://launch.cronos.com/token/0xad4db17e25fc62c43470c084cae5f239aa2f8bfa', '_blank'), 1200); }}>BURN IT</button><a className="panel-btn" href="https://x.com/Fwiz/status/2100663121702744509" target="_blank" rel="noreferrer">X ↗</a></div>
         </>}
         {focus === 'loot' && <>
           <div className="panel-kicker">· HOW TO BUY</div><h2>BURN<em></em></h2>
