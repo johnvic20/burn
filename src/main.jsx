@@ -318,6 +318,7 @@ function App() {
           <p>A burn-powered meme coin on Cronos.</p>
           <div className="panel-row">
             <button className="panel-btn" onClick={() => window.__burnFocus?.('bag')}>EXPLORE →</button>
+            <button className="panel-btn hot" onClick={burn}>BURN IT</button>
           </div>
         </>}
         {focus === 'bag' && <>
@@ -328,11 +329,11 @@ function App() {
         {focus === 'fire' && <>
           <div className="panel-kicker">· THE LORE</div>
           <img src={tweet2} alt="Lore" style={{ maxWidth: '100%', maxHeight: '450px', objectFit: 'contain' }} />
-          <div className="panel-row"><button className="panel-btn" onClick={() => window.__burnHome?.()}>HOME</button><button className="panel-btn hot" onClick={() => { burn(); setTimeout(() => window.open('https://launch.cronos.com/token/0xad4db17e25fc62c43470c084cae5f239aa2f8bfa', '_blank'), 1200); }}>BURN IT</button><a className="panel-btn" href="https://x.com/Fwiz/status/2100663121702744509" target="_blank" rel="noreferrer">X ↗</a></div>
+          <div className="panel-row"><button className="panel-btn" onClick={() => window.__burnHome?.()}>HOME</button><a className="panel-btn" href="https://x.com/Fwiz/status/2100663121702744509" target="_blank" rel="noreferrer">X ↗</a></div>
         </>}
         {focus === 'loot' && <>
           <div className="panel-kicker">· HOW TO BUY</div><h2>BURN<em></em></h2>
-          <p><strong>1</strong><br /><br />Fund a Cronos wallet</p>
+          <p><strong>1</strong><br />Fund a Cronos wallet</p>
           <p><strong>2</strong><br />go to cronos launch<br />Connect your wallet</p>
           <p><strong>3</strong><br />Swap CRO → BURN<br />double check the contract <span onClick={copyAddress} style={{ cursor: 'pointer', color: '#e7b768', textDecoration: 'underline', textDecorationColor: '#e7b768', fontSize: '12px' }}>{copied ? 'Copied!' : '0xad4db...2f8bfa'}</span></p>
           <div className="panel-row"><button className="panel-btn" onClick={() => window.__burnFocus?.('fire')}>THE LORE →</button><a className="panel-btn hot" href={BUY_URL} target="_blank" rel="noreferrer">BUY ON CRONOS ↗</a></div>
