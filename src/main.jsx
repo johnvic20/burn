@@ -161,15 +161,19 @@ function App() {
     }
 
     // Fire + ember particles in actual 3D space.
-    const emberCount = 420;
+    const emberCount = 1200;
     const positions = new Float32Array(emberCount * 3);
     const sizes = new Float32Array(emberCount);
     for (let i = 0; i < emberCount; i++) {
       const a = Math.random() * Math.PI * 2;
-      const r = Math.random() * 1.05;
-      positions[i*3] = -0.15 + Math.cos(a) * r;
-      positions[i*3+1] = -3.65 + Math.random() * 3.4;
-      positions[i*3+2] = 0.2 + Math.random() * 1.6;
+      const r = Math.random() * 1.5;
+      // Concentrate more embers at the bottom around the fire and extend further down
+      const yBias = Math.random() < 0.6 ? -4.2 + Math.random() * 1.8 : -3.65 + Math.random() * 3.4;
+      // Extend more to the left side
+      const xBias = Math.random() < 0.7 ? -1.2 + Math.cos(a) * r : -0.15 + Math.cos(a) * r;
+      positions[i*3] = xBias;
+      positions[i*3+1] = yBias;
+      positions[i*3+2] = 0.2 + Math.random() * 2.0;
       sizes[i] = 1.5 + Math.random() * 4;
     }
     const emberGeo = new THREE.BufferGeometry();
