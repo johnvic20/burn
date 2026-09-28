@@ -153,7 +153,7 @@ a {
     11px "DM Mono",
     monospace;
   letter-spacing: 0.2em;
-  color: #e7b768;
+  color: #ffffff;
 }
 .intro h1 {
   font-size: clamp(60px, 8vw, 132px);
@@ -325,9 +325,9 @@ a {
   cursor: pointer;
 }
 .panel-btn.hot {
-  background: #f2a73c;
-  color: #15100a;
-  border-color: #f2a73c;
+  background: #00d4ff;
+  color: #000000;
+  border-color: #00d4ff;
 }
 .bottom-ui {
   position: absolute;
@@ -536,5 +536,5 @@ footer {
   border-color: rgba(255, 255, 255, 0.22);
 }
 .world-panel .panel-kicker {
-  color: #e7b768;
+  color: #ffffff;
 }

@@ -296,6 +296,7 @@ function App() {
     setBurnPulse(true);
     setStatus('THE FIRE IS HOT. Open the launch page to make the trade.');
     setTimeout(() => setBurnPulse(false), 1200);
+    setTimeout(() => setStatus(''), 2000);
   };
 
   const copyAddress = () => {
@@ -303,6 +304,7 @@ function App() {
     setCopied(true);
     setStatus('Full contract address copied!');
     setTimeout(() => setCopied(false), 2000);
+    setTimeout(() => setStatus(''), 2000);
   };
 
   return (
@@ -313,9 +315,9 @@ function App() {
 
       <aside className={`panel ${focus ? 'show' : 'show world-panel'}`}>
         {!focus && <>
-          <div className="panel-kicker">·CRONOS CHAIN </div>
+          <div className="panel-kicker">·<span style={{ color: '#00d4ff' }}>CRONOS</span> <span style={{ color: '#ffffff' }}>CHAIN</span> </div>
           <h2>BURN</h2>
-          <p>A burn-powered meme coin on Cronos.</p>
+          <p>A burn-powered meme coin on <span style={{ color: '#00d4ff' }}>Cronos</span>.</p>
           <div className="panel-row">
             <button className="panel-btn" onClick={() => window.__burnFocus?.('bag')}>EXPLORE →</button>
             <button className="panel-btn hot" onClick={burn}>BURN IT</button>
@@ -323,7 +325,7 @@ function App() {
         </>}
         {focus === 'bag' && <>
           <div className="panel-kicker">· BURN</div><h2>CONTRACT<br /><em>ADDRESS</em></h2>
-          <p onClick={copyAddress} style={{ cursor: 'pointer', color: '#e7b768', textDecoration: 'underline', textDecorationColor: '#e7b768', fontSize: '12px' }}>{copied ? 'Copied!' : '0xad4db...2f8bfa'}</p>
+          <p onClick={copyAddress} style={{ cursor: 'pointer', color: '#00d4ff', textDecoration: 'underline', textDecorationColor: 'rgba(255, 255, 255, 0.67)', fontSize: '12px' }}>{copied ? 'Copied!' : '0xad4db...2f8bfa'}</p>
           <button className="panel-btn" onClick={() => window.__burnFocus?.('loot')}>HOW TO BUY →</button>
         </>}
         {focus === 'fire' && <>
@@ -333,9 +335,9 @@ function App() {
         </>}
         {focus === 'loot' && <>
           <div className="panel-kicker">· HOW TO BUY</div><h2>BURN<em></em></h2>
-          <p><strong>1</strong><br />Fund a Cronos wallet</p>
-          <p><strong>2</strong><br />go to cronos launch<br />Connect your wallet</p>
-          <p><strong>3</strong><br />Swap CRO → BURN<br />double check the contract <span onClick={copyAddress} style={{ cursor: 'pointer', color: '#e7b768', textDecoration: 'underline', textDecorationColor: '#e7b768', fontSize: '12px' }}>{copied ? 'Copied!' : '0xad4db...2f8bfa'}</span></p>
+          <p><strong>1</strong><br />Fund a <span style={{ color: '#00d4ff' }}>Cronos</span> wallet</p>
+          <p><strong>2</strong><br />go to <span style={{ color: '#00d4ff' }}>cronos</span> launch<br />Connect your wallet</p>
+          <p><strong>3</strong><br />Swap <span style={{ color: '#00d4ff' }}>CRO</span> → BURN<br />double check the contract <span onClick={copyAddress} style={{ cursor: 'pointer', color: '#00d4ff', textDecoration: 'underline', textDecorationColor: 'rgba(255, 255, 255, 0.67)', fontSize: '12px' }}>{copied ? 'Copied!' : '0xad4db...2f8bfa'}</span></p>
           <div className="panel-row"><button className="panel-btn" onClick={() => window.__burnFocus?.('fire')}>THE LORE →</button><a className="panel-btn hot" href={BUY_URL} target="_blank" rel="noreferrer">BUY ON CRONOS ↗</a></div>
         </>}
       </aside>
@@ -348,7 +350,7 @@ function App() {
       </div>
 
       <div className="status">{status}</div>
-      <footer><span>CRONOS MAINNET</span></footer>
+      <footer><span><span style={{ color: '#00d4ff' }}>CRONOS</span> NETWORK</span></footer>
     </main>
   );
 }
